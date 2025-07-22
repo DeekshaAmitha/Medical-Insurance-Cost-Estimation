@@ -6,7 +6,7 @@ import numpy as np
 app = FastAPI()
 
 # Load model and scaler
-model = joblib.load("random_forest_model.pkl")
+model = joblib.load("random_forest_model.joblib")
 scaler = joblib.load("scaler.pkl")
 
 # Request schema
