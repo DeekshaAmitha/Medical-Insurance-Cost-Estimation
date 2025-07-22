@@ -3,4 +3,5 @@ uvicorn[standard]
 scikit-learn==1.5.1
 joblib
 numpy
+pandas
 pydantic
