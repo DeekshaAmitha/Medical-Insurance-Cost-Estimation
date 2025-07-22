@@ -7,7 +7,7 @@ app = FastAPI()
 
 # Load model and scaler
 model = joblib.load("random_forest_model.joblib")
-scaler = joblib.load("scaler.pkl")
+scaler = joblib.load("scaler.joblib")
 
 # Request schema
 class InsuranceInput(BaseModel):
