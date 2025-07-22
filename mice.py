@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
 import numpy as np
+import pandas as pd
 
 app = FastAPI()
 
@@ -45,7 +46,9 @@ def predict(data: InsuranceInput):
             bmi_smoker
         ]
 
-        scaled_input = scaler.transform([features])
+        input_df = pd.DataFrame([features], columns=scaler.feature_names_in_)
+
+        scaled_input = scaler.transform(input_df)
         prediction = model.predict(scaled_input)[0]
 
         return {"estimated_cost": round(prediction, 2)}
